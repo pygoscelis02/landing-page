@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+
+/* 全体に適用するスタイル */
+
+*{
+    box-sizing: border-box;
+    outline: red solid 1px;
+}
+
+body{
+    max-width: 1425px;
+    min-width: 845px;
+    margin: auto;
+    font-size: 16px;
+    border: 3px solid rgb(255, 255, 255);
+    background-color: #abcdef;
+}
+
+p{
+    margin: 0;
+    padding: 0;
+    line-height: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+li p{
+    padding: 0;
+}
+
+.text-flex{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+img{
+    width: 100%;
+}
+
+
+/* キービジュアル部分に適用するスタイル */
+
+.main-img{
+    height: 180%;
+}
+
+.catch-1{
+    width: 450px;
+    display: flex;
+    margin: auto;
+}
+
+.catch-1 .circle{
+    width: 75px;
+    height: 75px;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 5px 0px;
+}
+
+.catch-1 .circle p{
+    text-align: center;
+    width: 75px;
+}
+
+.catch-1-text p{
+    margin-left: 20px;
+    font-size: 28px;
+}
+
+.catch-2{
+    height: 45px;
+    width: 350px;
+    font-size: 17px;
+    margin: 5px auto;
+    
+}
+
+
+/* に適用するスタイル */
+
+#wrapper-top, #wrapper-bottom{
+    width: 63%;
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+
+.quadrate-image {
+
+}
+
+.check-box{
+    width: 20px;
+}
