@@ -1,26 +1,65 @@
 @charset "utf-8";
 
 
-/* 全体に適用するスタイル */
+
+/* ページ共通のカラーリング */
+
+
+:root {
+    --page-color: #abcdef;
+    --main-color: #547557;
+    --sub-color: #E1EFEF;
+    --sub-color2: #27B8AB;
+    --sub-color3: hsl(51, 33%, 58%);
+    --black: #666;
+    --white: #fff;
+    --shadow1: 0 2px 0 #888, 0 3px 0 #888, 0 4px 5px #333, 5px 4px 2px var(--black);
+    --shadow2: 0 2px 0 #888, 0 3px 0 #888, 0 4px 5px #333;
+}
+
+
+
+/* 🌎全体に適用するスタイル ここから🌎 */
+
 
 *{
     box-sizing: border-box;
     outline: red solid 1px;
 }
 
-body{
-    max-width: 1425px;
-    min-width: 845px;
+#wrapper{
+    width: 800px;
+    min-width: 800px;
+    max-width: 800px;
     margin: auto;
+}
+
+body{
+    margin: 0;
     font-size: 16px;
     border: 3px solid rgb(255, 255, 255);
-    background-color: #abcdef;
+    background-color: var(--page-color);
+}
+
+a{
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
 }
 
 p{
     margin: 0;
     padding: 0;
     line-height: 100%;
+    font-size: 16px;
+    color: var(--black);
+}
+
+strong{
+    margin: 0;
+    padding: 0;
+    line-height: 100%;
+    font-size: 16px;
 }
 
 li {
@@ -31,21 +70,116 @@ li p{
     padding: 0;
 }
 
-.text-flex{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
 img{
     width: 100%;
 }
 
+/* 子要素のpにflexを適用するためのclass */
+.text-flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+/* ↑ DO NOT REWRITE ↑ */
 
-/* キービジュアル部分に適用するスタイル */
 
-.main-img{
-    height: 180%;
+/* 🌎全体に適用するスタイル ここまで🌎 */
+
+
+
+/* 📜文字のスタイルの指定 ここから📜 */
+
+
+/* 📜文字スタイル-ヘッダー部分-📜 */
+
+h1{
+    color: var(--white);
+    text-shadow: var(--shadow1);
+}
+
+.catch-1 .circle p{
+    color: var(--black);
+    font-weight: bold;
+    text-shadow:1px 1px 2px var(--white);
+}
+
+.catch-1 .catch-1-text p{
+    color: var(--white);
+    font-weight: 400;
+    text-shadow: var(--shadow2);
+}
+
+.catch-2 p{
+    font-size: 16px;
+    color: var(--white);
+    text-shadow: var(--shadow2);
+}
+
+/* 📜文字スタイル-ヘッダー部分-ここまで📜 */
+
+
+/* 📜文字スタイル-商品紹介ヘッダー直下部分-ここから📜 */
+
+.promo-top p{
+    font-size: 20px;
+    color: var(--white);
+}
+
+.promo-middle p:first-child{
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.promo-bottom div:nth-child(2) p{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.promo-bottom div:nth-child(2) p strong{
+    font-size: 48px;
+    /* font-weight: bold; */
+}
+
+.promo-bottom .button p{
+    font-size: 23px;
+}
+
+/* 📜文字スタイル-商品紹介ヘッダー直下部分-ここまで📜 */
+
+
+/* 📜文字のスタイルの指定 ここまで📜*/
+
+
+
+/* ヘッダー部分（キービジュアル部分）に適用するスタイル ここから */
+
+header{
+    width: 100vw;
+    /* max-width: 1800px;
+    min-width: 150px; */
+    margin:0 calc(50% - 50vw);
+    height: 800px;
+    /* background-color: #aaa; */
+}
+
+h1{
+    margin-top: 0;
+    width: 218px;
+    text-align: center;
+    margin-left: calc(50vw - 400px);
+    /* 左空白：(ビューポート幅-コンテンツ幅)/2=(100vw-800px)/2 */
+}
+
+#main-visual{
+    height: 800px;
+    /* max-width: 1230px; */
+    margin: auto;
+    background: linear-gradient(to bottom, transparent 0%, transparent 65%, var(--page-color) 91%, var(--page-color) 100%), url(images/main-images/main-visual.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: bottom;
 }
 
 .catch-1{
@@ -81,17 +215,60 @@ img{
 }
 
 
-/* に適用するスタイル */
 
-#wrapper-top, #wrapper-bottom{
-    width: 63%;
+/* ヘッダー部分直下（商品紹介）に適用するスタイル ここから */
+
+#contents{
+    margin-top: -120px;
+}
+
+.promo-top{
+    height: 70px;
+    justify-content: center;
+    margin: auto;
+    background-color: hsl(51, 33%, 58%, 0.7);
+}
+
+.promo-middle{
+    height: 100px;
+    background-color: var(--page-color);
+    padding-top: 15px;
+}
+
+.promo-bottom{
+    height: 70px;
+    justify-content:space-between;
+}
+
+.promo-bottom div:first-child{
+    width: 75px;
+    height: auto;
+    margin-left: 10px;
+}
+
+.promo-bottom div:first-child p{
+    width: auto;
+    padding: 4px 0;
+    text-align: center;
+}
+
+.promo-bottom div:nth-child(2) p{
+    /* margin-right: 50px;
+    margin-left: 0px; */
+}
+
+.promo-bottom .button{
+    width: 450px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.promo-bottom .button p{
     margin: auto;
 }
 
 
-
-
-
+/* ヘッダー部分直下（商品紹介）に適用するスタイル ここまで */
 
 
 
