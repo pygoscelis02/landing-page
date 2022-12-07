@@ -9,10 +9,13 @@
     --page-color: #abcdef;
     --main-color: #547557;
     --sub-color: #E1EFEF;
-    --sub-color2: #27B8AB;
+    --sub-color2: #1c9f94;
     --sub-color3: hsl(51, 33%, 58%);
+    --sub-color4: #8b7546;
+    --line-green: #61d94f;
     --black: #666;
     --white: #fff;
+    --right-gray: #cccccc;
     --shadow1: 0 2px 0 #888, 0 3px 0 #888, 0 4px 5px #333, 5px 4px 2px var(--black);
     --shadow2: 0 2px 0 #888, 0 3px 0 #888, 0 4px 5px #333;
 }
@@ -132,6 +135,16 @@ h1{
     color: var(--main-color);
 }
 
+.promo-bottom div:first-child p:first-child{
+    color: var(--white);
+    background-color: #fff;
+}
+
+.promo-bottom div:first-child p:nth-child(2){
+    color: var(--sub-color4);
+    background-color: #fff;
+}
+
 .promo-bottom div:nth-child(2) p{
     font-weight: bold;
     font-size: 18px;
@@ -144,9 +157,73 @@ h1{
 
 .promo-bottom .button p{
     font-size: 23px;
+    color: var(--white);
+}
+
+.introduction-product-title p{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.sub-introduction div:first-child p{
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.sub-image p{
+    font-size: 18px;
+}
+
+.sub-image p:nth-child(2), .sub-image p:nth-child(3){
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.coupon .coupon-friend p{
+    color: var(--white);
+}
+
+.coupon-left-bottom div:first-child p{
+    font-size: 45px;
+    font-weight: bold;
+    color: var(--line-green);
+    text-align: center;
+}
+
+.coupon-left-bottom div:nth-child(2) p{
+    font-size: 20px;
+    color: var(--line-green);
+}
+
+.coupon-left-bottom div:nth-child(2) p:first-child{
+    font-weight: bold;
 }
 
 /* 📜文字スタイル-商品紹介ヘッダー直下部分-ここまで📜 */
+
+
+/* 📜シリーズ（parfum）簡単な概要紹介に適用するスタイル ここから📜 */
+
+#parfum-series-introduction .top p{
+    color: var(--white);
+}
+
+#parfum-series-introduction .top p:first-child{
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.3em;
+}
+
+#parfum-series-introduction .ranking-top p{
+    font-size: 27px;
+}
+
+#parfum-series-introduction .ranking-top div p{
+    font-size: 16px;
+}
+
+
+/* 📜シリーズ（parfum）簡単な概要紹介に適用するスタイル ここまで📜 */
 
 
 /* 📜文字のスタイルの指定 ここまで📜*/
@@ -160,7 +237,7 @@ header{
     /* max-width: 1800px;
     min-width: 150px; */
     margin:0 calc(50% - 50vw);
-    height: 800px;
+    /* height: 800px; */
     /* background-color: #aaa; */
 }
 
@@ -210,13 +287,11 @@ h1{
     height: 45px;
     width: 350px;
     font-size: 17px;
-    margin: 5px auto;
-    
+    margin: 5px auto;   
 }
 
 
-
-/* ヘッダー部分直下（商品紹介）に適用するスタイル ここから */
+/* ヘッダー部分直下（1.プロモーション部分）に適用するスタイル ここから */
 
 #contents{
     margin-top: -120px;
@@ -252,6 +327,14 @@ h1{
     text-align: center;
 }
 
+.promo-bottom div:first-child p:first-child{
+    background-color: var(--sub-color4);
+}
+
+.promo-bottom div:first-child p:nth-child(2){
+    background-color: var(--white);
+}
+
 .promo-bottom div:nth-child(2) p{
     /* margin-right: 50px;
     margin-left: 0px; */
@@ -261,6 +344,7 @@ h1{
     width: 450px;
     height: 50px;
     margin-right: 10px;
+    background-color:var(--main-color);
 }
 
 .promo-bottom .button p{
@@ -268,15 +352,225 @@ h1{
 }
 
 
-/* ヘッダー部分直下（商品紹介）に適用するスタイル ここまで */
+/* ヘッダー部分直下（1.プロモーション部分）に適用するスタイル ここまで */
+
+
+
+/* ヘッダー部分直下（2. セット内容説明部分）に適用するスタイル ここから */
+
+
+.introduction-product-title{
+    height: 50px;
+}
+
+.introduction-product-title hr{
+    width: 240px;
+    border-top: 2px solid var(--black);
+}
+
+.set-contents div {
+    width: 50%;
+    justify-content: flex-start;
+}
+
+.set-contents div p:first-child{
+    margin-right: 30px;
+}
+
+.sub-introduction{
+    justify-content: center;
+}
+
+.sub-introduction div:first-child{
+    margin: 15px 0;
+}
+
+.sub-introduction div:first-child hr{
+    width: 462px;
+    height: 4px;
+    background-color: var(--sub-color3);
+    border-radius: 20px;
+    margin-top: -5px;
+}
+
+.sub-introduction .sub-image{
+    height: 180px;
+    width: 50%;
+    background: linear-gradient(to left, transparent 0%, var(--page-color) 57%, var(--page-color) 100%), url(images/main-images/olive-oil.jpg);
+    background-size: contain;
+    background-position: right center;
+}
+
+.sub-introduction .sub-image p{
+    width: 100%;
+}
+
+/* ヘッダー部分直下（2. セット内容説明部分）に適用するスタイル ここまで */
+
+
+/* ヘッダー部分直下（3. LINEクーポン）に適用するスタイル ここから */
+
+.coupon{
+    width: auto;
+    height: auto;
+    margin: 40px 10px 40px 10px;
+    justify-content: space-evenly;
+    background-color:var(--right-gray);    
+}
+
+/* 吹き出し▲部分 */
+.coupon{
+    position: relative;
+}
+.coupon:before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    margin-left: -15px;
+    border: 15px solid transparent;
+    border-bottom: 15px solid var(--line-green);
+  }
+/* 吹き出し▲部分ここまで */
+
+.coupon .coupon-friend{
+    width: 100%;
+    height: 25px;
+    text-align: center;
+    background-color: var(--line-green);
+}
+
+.coupon-left, .coupon-right{
+    margin: 20px 0;
+    width: 276px;
+    height: 102px;
+    background-color: var(--white);
+}
+
+.coupon-left{
+    width: 276px;
+}
+
+.coupon-right{
+    width: 345px;
+    justify-content: space-between;
+}
+
+.coupon-right p{
+    padding: 0 20px 0 15px;
+}
+
+.coupon-left div{    
+    margin: 5px 0;
+}
+
+.coupon-left-bottom div:nth-child(2){
+    padding-left: 10px;
+}
+
+.coupon img{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin: 0 15px;
+}
+
+/* ヘッダー部分直下（3. LINEクーポン）に適用するスタイル ここまで */
+
+
+/* シリーズ（parfum）簡単な概要紹介に適用するスタイル ここから */
+
+.parfum-series{
+    width: 800px;
+    height: auto;
+    margin: auto;
+}
+
+#parfum-series-introduction{
+    width: 100vw;
+    height: auto;
+    margin: 0 calc(50% - 50vw);
+    background: url(images/main-images/background-blueandgreen.jpg);
+    background-size: cover;
+    background-position: right center;
+}
+
+#parfum-series-introduction .spacing{
+    height: 35px;
+}
+
+#parfum-series-introduction hr{
+    background-color: var(--white);
+    height: 1px;
+    margin: 5px 0 5px 0;
+}
+
+.top{
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--main-color);
+}
+
+#parfum-series-introduction .top{
+    width: 100%;
+    height: 70px;
+}
+
+#parfum-series-introduction .ranking .top{
+    height: 50px;
+}
+
+#parfum-series-introduction .ranking-border{
+    background-color: var(--white);
+    margin-top: 40px;
+    padding: 5px;
+}
+
+#parfum-series-introduction .ranking{
+    background-color: var(--white);
+    border: 4px solid var(--main-color);
+}
+
+#parfum-series-introduction .ranking-top{
+    margin: 10px 0;
+    width: 450px;
+}
+
+#parfum-series-introduction .ranking-top p{
+    margin: 10px 20px;
+}
+
+#parfum-series-introduction .ranking-bottom{
+    width: 380px;
+    height: 150px;
+    justify-content: flex-start;
+}
+
+#parfum-series-introduction .ranking-bottom img{
+    width: 120px;
+    margin-right: 10px;
+}
+
+#parfum-series-introduction .ranking-bottom div{
+    width: 57%;
+    flex-direction: column;
+}
+
+
+/* シリーズ（parfum）簡単な概要紹介に適用するスタイル ここまで */
 
 
 
 
+
+
+/*  */
+/* 
 .quadrate-image {
 
 }
 
 .check-box{
     width: 20px;
-}
+} */
