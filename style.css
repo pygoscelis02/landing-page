@@ -6,6 +6,11 @@
 
 
 :root {
+    /* width */
+    --content-width: 800px;
+    --min-content-width: 300px;
+    /* ※スマートフォンの最小幅は320px */
+    /* color */
     --page-color: #abcdef;
     --main-color: #547557;
     --sub-color: #E1EFEF;
@@ -16,8 +21,13 @@
     --black: #666;
     --white: #fff;
     --right-gray: #cccccc;
+    /* text-shadow */
     --shadow1: 0 2px 0 #888, 0 3px 0 #888, 0 4px 5px #333, 5px 4px 2px var(--black);
     --shadow2: 0 2px 0 #888, 0 3px 0 #888, 0 4px 5px #333;
+    /* spacing */
+    --spacingL: 90px;
+    --spacingM: 40px;
+    --spacingS: 20px;
 }
 
 
@@ -31,9 +41,10 @@
 }
 
 #wrapper{
-    width: 800px;
-    min-width: 800px;
-    max-width: 800px;
+    /* width: var(--content-width); */
+    /* min-width: var(--content-width); */
+    min-width: var(--min-content-width);
+    max-width: var(--content-width);
     margin: auto;
 }
 
@@ -75,7 +86,19 @@ li p{
 
 img{
     width: 100%;
+    /* object-fit: cover; */
+    /* margin: 0; */
+    /* padding: 0; */
+    vertical-align:top;
+    /* ↑これを指定することで margin, padding 0 指定でも消せない空白を消す */
+    /* 🎀「img」には必ず指定した方が良い！🎀 */
 }
+
+/* div{
+    margin: 0;
+    padding: 0;
+} */
+
 
 /* 子要素のpにflexを適用するためのclass */
 .text-flex{
@@ -124,10 +147,17 @@ h1{
 
 /* 📜文字スタイル-商品紹介ヘッダー直下部分-ここから📜 */
 
-.promo-top p{
-    font-size: 20px;
+.promo-top p, .promo-top p strong{
+    font-size: 24px;
     color: var(--white);
 }
+
+.promo-top p strong{
+    font-size: 36px;
+    color: var(--white);
+    padding: 0 10px;
+}
+
 
 .promo-middle p:first-child{
     font-size: 24px;
@@ -222,8 +252,68 @@ h1{
     font-size: 16px;
 }
 
+#parfum-series-introduction .ranking-bottom p{
+    line-height: 1.5em;
+}
+
+.series-introduction-top p{
+    font-size: 20px;
+    color: var(--white);
+    
+    line-height: 2.4em;
+}
+
+.series-introduction-top p:first-child{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.series-introduction-eachcontent .textbox0 p{
+    font-size: 22px;
+    color: var(--white);
+    line-height: 2em;
+    font-weight: bold;
+}
+
+.series-introduction-eachcontent .textbox0 p strong{
+    font-size: 30px;
+    color: var(--white);
+    line-height: 2em;
+}
+
+.series-introduction-eachcontent .textbox1 p{
+    font-size: 20px;
+    color: var(--main-color);
+    line-height: 1.5em;
+    font-weight: bold;
+}
+
+.series-introduction-eachcontent .textbox2 p{
+    font-size: 17px;
+    color: var(--black);
+    line-height: 1.4em;
+    font-weight: bold;
+}
+
+.series-introduction-eachcontent .textbox3 p{
+    line-height: 1em;
+}
 
 /* 📜シリーズ（parfum）簡単な概要紹介に適用するスタイル ここまで📜 */
+
+
+/* 📜セット（shampoo+hair-oil）の説明に適用するスタイル ここから📜 */
+
+#shampoo .textbox0 p{
+    font-size: 52px;
+    color: var(--white);
+    text-shadow: var(--shadow2);
+    line-height: 2em;
+}
+
+
+/* 📜セット（shampoo+hair-oil）の説明に適用するスタイル ここまで📜 */
+
 
 
 /* 📜文字のスタイルの指定 ここまで📜*/
@@ -241,11 +331,10 @@ header{
     /* background-color: #aaa; */
 }
 
-h1{
+header h1{
     margin-top: 0;
-    width: 218px;
-    text-align: center;
-    margin-left: calc(50vw - 400px);
+    padding-left: 15px;
+    margin-left: calc(50vw - calc(0.5*var(--content-width)));
     /* 左空白：(ビューポート幅-コンテンツ幅)/2=(100vw-800px)/2 */
 }
 
@@ -260,8 +349,8 @@ h1{
 }
 
 .catch-1{
-    width: 450px;
     display: flex;
+    justify-content: center;
     margin: auto;
 }
 
@@ -278,6 +367,10 @@ h1{
     width: 75px;
 }
 
+.catch-1-text{
+    flex-flow: column;
+}
+
 .catch-1-text p{
     margin-left: 20px;
     font-size: 28px;
@@ -285,7 +378,7 @@ h1{
 
 .catch-2{
     height: 45px;
-    width: 350px;
+    width: 300px;
     font-size: 17px;
     margin: 5px auto;   
 }
@@ -294,20 +387,20 @@ h1{
 /* ヘッダー部分直下（1.プロモーション部分）に適用するスタイル ここから */
 
 #contents{
-    margin-top: -120px;
+    margin-top: calc(-1*(var(--spacingL) + var(--spacingS)));
 }
 
 .promo-top{
-    height: 70px;
+    height: var(--spacingL);
     justify-content: center;
     margin: auto;
     background-color: hsl(51, 33%, 58%, 0.7);
 }
 
 .promo-middle{
-    height: 100px;
+    height: 70px;
     background-color: var(--page-color);
-    padding-top: 15px;
+    margin-top: var(--spacingS);
 }
 
 .promo-bottom{
@@ -413,7 +506,7 @@ h1{
 .coupon{
     width: auto;
     height: auto;
-    margin: 40px 10px 40px 10px;
+    margin: var(--spacingM) 10px var(--spacingL) 10px;
     justify-content: space-evenly;
     background-color:var(--right-gray);    
 }
@@ -481,7 +574,7 @@ h1{
 /* シリーズ（parfum）簡単な概要紹介に適用するスタイル ここから */
 
 .parfum-series{
-    width: 800px;
+    width: 100%;
     height: auto;
     margin: auto;
 }
@@ -496,7 +589,7 @@ h1{
 }
 
 #parfum-series-introduction .spacing{
-    height: 35px;
+    height: var(--spacingM);
 }
 
 #parfum-series-introduction hr{
@@ -522,19 +615,21 @@ h1{
 }
 
 #parfum-series-introduction .ranking-border{
+    width: var(--content-width);
     background-color: var(--white);
-    margin-top: 40px;
+    margin: var(--spacingM) auto 0 auto;
     padding: 5px;
 }
 
 #parfum-series-introduction .ranking{
+    width: calc(var(--content-width) - 10px);
     background-color: var(--white);
     border: 4px solid var(--main-color);
 }
 
 #parfum-series-introduction .ranking-top{
     margin: 10px 0;
-    width: 450px;
+    width: 100vw;
 }
 
 #parfum-series-introduction .ranking-top p{
@@ -542,8 +637,10 @@ h1{
 }
 
 #parfum-series-introduction .ranking-bottom{
-    width: 380px;
+    width: 50%;
+    max-width: 50%;
     height: 150px;
+    padding-left: 10px;
     justify-content: flex-start;
 }
 
@@ -553,8 +650,56 @@ h1{
 }
 
 #parfum-series-introduction .ranking-bottom div{
-    width: 57%;
+    width: 63%;
     flex-direction: column;
+}
+
+.series-introduction-top{
+    text-align: center;
+}
+
+.series-introduction-top p:first-child{
+    line-height: 1.5em;
+    margin-top: var(--spacingM);
+    margin-bottom: 15px;
+}
+
+.series-introduction-contents{
+    width: 80%;
+    height: auto;
+    margin: auto;
+    padding-top: var(--spacingM);
+    padding-bottom: calc(var(--spacingM) + var(--spacingS));
+    text-align: center;
+}
+
+.series-introduction-eachcontent .spacing-s{
+    margin-top: var(--spacingS);
+}
+
+.series-introduction-eachcontent .series-each-top {
+    height: 160px;
+    margin-bottom: -80px;
+}
+
+.series-introduction-eachcontent .series-each-top img{
+    width: 50%;
+    object-fit: cover;
+    height: 100%;
+}
+
+.series-introduction-eachcontent .textbox0 p strong{
+    margin-right: 5px;
+}
+
+.series-introduction-eachcontent .textboxes{
+    background-color: var(--white);
+    padding-top: calc(20px + 80px);
+    padding-bottom: 20px;
+}
+
+.series-introduction-eachcontent .textbox1, .series-introduction-eachcontent .textbox2{
+    margin: 0 0 10px 0;
 }
 
 
@@ -562,15 +707,98 @@ h1{
 
 
 
+/* セット（shampoo+hair-oil）の説明に適用するスタイル ここから */
 
+#shampoo{
+    width: 100%;
+    height: auto;
+    margin: var(--spacingL) 0;
+}
 
+#shampoo .textbox0 p{
+    text-align: center;
+    height: 104px;
+    margin-bottom: -104px;
+    position: relative;
+}
 
-/*  */
-/* 
-.quadrate-image {
+#shampoo .quadrate-image img{
+    height: 610px;
+
+    object-fit: cover;
 
 }
 
-.check-box{
-    width: 20px;
-} */
+.recommendation{
+    width: 80%;
+}
+
+#shampoo .recommendation-text{
+    width: 60%;
+}
+
+#shampoo .recommendation p{
+    text-align: center;
+}
+
+#shampoo .recommendation-list{
+    text-align: left;
+}
+
+#shampoo .recommendation-list li{
+    width: auto;
+    height: auto;
+    justify-content: flex-start;
+
+}
+
+#shampoo .recommendation-check-box{
+    height: 18px;
+    width: auto;
+    margin-right: 10px;
+}
+
+#shampoo .recommendation-images{
+    
+}
+
+
+
+/* セット（shampoo+hair-oil）の説明に適用するスタイル ここまで */
+
+
+
+
+@media screen and (max-width: calc(var(--content-width) - 1px)) {
+	/* タブレット・スマホ用CSS：PC版コンテンツ幅 (:799px) 以下に適用される */
+    #wrapper{
+        width: 100vw;
+        max-width: 100vw;
+        min-width: var(--min-content-width);
+        margin: auto;
+    }
+    
+    header{
+        width: 100vw;
+        max-width: 100vh;
+        min-width: 150px;
+        /* margin:0 calc(50% - 50vw); */
+        /* height: 800px; */
+        /* background-color: #aaa; */
+    }
+
+    header h1{
+        margin-top: 0;
+        margin-left: 0;
+        padding-left: 15px;
+        /* margin-left: calc(50vw - calc(0.5*var(--content-width))); */
+        /* 左空白：(ビューポート幅-コンテンツ幅)/2=(100vw-800px)/2 */
+    }
+
+    .catch-1{
+        width: auto;
+        display: flex;
+    }
+
+
+}
