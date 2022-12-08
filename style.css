@@ -8,7 +8,7 @@
 :root {
     /* width */
     --content-width-PC: 800px;
-    --min-content-width: 300px;
+    --min-content-width: 320px;
     /* ※スマートフォンの最小幅は320px */
     --content-width-TABLET: 100vw;
     /* color */
@@ -29,6 +29,20 @@
     --spacingL: 90px;
     --spacingM: 40px;
     --spacingS: 20px;
+    /* text-size for PC */
+    --text-size-PC-A: 16px;
+    --text-size-PC-B: 17px;
+    --text-size-PC-C: 18px;
+    --text-size-PC-D: 20px;
+    --text-size-PC-E: 22px;
+    --text-size-PC-F: 24px;
+    --text-size-PC-G: 28px;
+    --text-size-PC-H: 30px;
+    --text-size-PC-I: 36px;
+    --text-size-PC-J: 45px;
+    --text-size-PC-K: 48px;
+    --text-size-PC-L: 52px;
+    /* text-size for TABLET */
 }
 
 
@@ -51,7 +65,7 @@
 
 body{
     margin: 0;
-    font-size: 16px;
+    font-size: var(--text-size-PC-A);
     border: 3px solid rgb(255, 255, 255);
     background-color: var(--page-color);
 }
@@ -66,7 +80,7 @@ p{
     margin: 0;
     padding: 0;
     line-height: 100%;
-    font-size: 16px;
+    font-size: var(--text-size-PC-A);
     color: var(--black);
 }
 
@@ -74,7 +88,7 @@ strong{
     margin: 0;
     padding: 0;
     line-height: 100%;
-    font-size: 16px;
+    font-size: var(--text-size-PC-A);
 }
 
 li {
@@ -138,7 +152,7 @@ h1{
 }
 
 .catch-2 p{
-    font-size: 16px;
+    font-size: var(--text-size-PC-A);
     color: var(--white);
     text-shadow: var(--shadow2);
 }
@@ -149,21 +163,26 @@ h1{
 /* 📜文字スタイル-商品紹介ヘッダー直下部分-ここから📜 */
 
 .promo-top p, .promo-top p strong{
-    font-size: 24px;
+    font-size: var(--text-size-PC-F);
     color: var(--white);
 }
 
 .promo-top p strong{
-    font-size: 36px;
+    font-size: var(--text-size-PC-I);
     color: var(--white);
     padding: 0 10px;
 }
 
 
 .promo-middle p:first-child{
-    font-size: 24px;
+    font-size: var(--text-size-PC-F);
     font-weight: bold;
     color: var(--main-color);
+    line-height: 2em;
+}
+
+.promo-middle p:nth-child(2){
+    line-height: 1.8em;
 }
 
 .promo-bottom div:first-child p:first-child{
@@ -178,35 +197,39 @@ h1{
 
 .promo-bottom div:nth-child(2) p{
     font-weight: bold;
-    font-size: 18px;
+    font-size: var(--text-size-PC-C);
 }
 
 .promo-bottom div:nth-child(2) p strong{
-    font-size: 48px;
+    font-size: var(--text-size-PC-K);
     /* font-weight: bold; */
 }
 
 .promo-bottom .button p{
-    font-size: 23px;
+    font-size: var(--text-size-PC-E);
     color: var(--white);
 }
 
 .introduction-product-title p{
-    font-size: 20px;
+    font-size: var(--text-size-PC-D);
     font-weight: bold;
 }
 
 .sub-introduction div:first-child p{
-    font-size: 17px;
+    font-size: var(--text-size-PC-B);
     font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: var(--sub-color4);
+    text-decoration-thickness: 3px;
+
 }
 
 .sub-image p{
-    font-size: 18px;
+    font-size: var(--text-size-PC-C);
 }
 
 .sub-image p:nth-child(2), .sub-image p:nth-child(3){
-    font-size: 24px;
+    font-size: var(--text-size-PC-F);
     font-weight: bold;
 }
 
@@ -215,14 +238,14 @@ h1{
 }
 
 .coupon-left-bottom div:first-child p{
-    font-size: 45px;
+    font-size: var(--text-size-PC-J);
     font-weight: bold;
     color: var(--line-green);
     text-align: center;
 }
 
 .coupon-left-bottom div:nth-child(2) p{
-    font-size: 20px;
+    font-size: var(--text-size-PC-D);
     color: var(--line-green);
 }
 
@@ -240,17 +263,17 @@ h1{
 }
 
 #parfum-series-introduction .top p:first-child{
-    font-size: 22px;
+    font-size: var(--text-size-PC-E);
     font-weight: bold;
     line-height: 1.3em;
 }
 
 #parfum-series-introduction .ranking-top p{
-    font-size: 27px;
+    font-size: var(--text-size-PC-G);
 }
 
 #parfum-series-introduction .ranking-top div p{
-    font-size: 16px;
+    font-size: var(--text-size-PC-A);
 }
 
 #parfum-series-introduction .ranking-bottom p{
@@ -258,39 +281,39 @@ h1{
 }
 
 .series-introduction-top p{
-    font-size: 20px;
+    font-size: var(--text-size-PC-D);
     color: var(--white);
     
     line-height: 2.4em;
 }
 
 .series-introduction-top p:first-child{
-    font-size: 24px;
+    font-size: var(--text-size-PC-F);
     font-weight: bold;
 }
 
 .series-introduction-eachcontent .textbox0 p{
-    font-size: 22px;
+    font-size: var(--text-size-PC-E);
     color: var(--white);
     line-height: 2em;
     font-weight: bold;
 }
 
 .series-introduction-eachcontent .textbox0 p strong{
-    font-size: 30px;
+    font-size: var(--text-size-PC-H);
     color: var(--white);
     line-height: 2em;
 }
 
 .series-introduction-eachcontent .textbox1 p{
-    font-size: 20px;
+    font-size: var(--text-size-PC-D);
     color: var(--main-color);
     line-height: 1.5em;
     font-weight: bold;
 }
 
 .series-introduction-eachcontent .textbox2 p{
-    font-size: 17px;
+    font-size: var(--text-size-PC-B);
     color: var(--black);
     line-height: 1.4em;
     font-weight: bold;
@@ -305,12 +328,44 @@ h1{
 
 /* 📜セット（shampoo+hair-oil）の説明に適用するスタイル ここから📜 */
 
-#shampoo .textbox0 p{
-    font-size: 52px;
+#shampoo .textbox0 p, #hair-oil .textbox0 p{
+    font-size: var(--text-size-PC-L);
     color: var(--white);
     text-shadow: var(--shadow2);
     line-height: 2em;
 }
+
+#shampoo .textbox1 p, #hair-oil .textbox1 p{
+    font-size: var(--text-size-PC-C);
+    color: var(--white);
+    text-align: center;
+    font-weight: bold;
+    text-shadow: var(--shadow2);
+    line-height: 1.2em;
+}
+
+#shampoo .recommendation-list div p{
+    font-size: var(--text-size-PC-A);
+    font-weight: bold;
+}
+
+
+/* shampooのみ */
+#shampoo .improvement p{
+    font-size: var(--text-size-PC-G);
+    line-height: 1.2em;
+    color: var(--sub-color4);
+    text-shadow: var(--shadow2);
+}
+#shampoo .improvement p:nth-child(3), #shampoo .improvement p:nth-child(3) strong{
+    font-size: var(--text-size-PC-I);
+    line-height: 1.5em;
+}
+.ingredients-introduction .title-circle p{
+    color: var(--white);
+}
+/* shampooのみ */
+
 
 
 /* 📜セット（shampoo+hair-oil）の説明に適用するスタイル ここまで📜 */
@@ -374,13 +429,13 @@ header h1{
 
 .catch-1-text p{
     margin-left: 20px;
-    font-size: 28px;
+    font-size: var(--text-size-PC-G);
 }
 
 .catch-2{
     height: 45px;
     width: 300px;
-    font-size: 17px;
+    font-size: var(--text-size-PC-B);
     margin: 5px auto;   
 }
 
@@ -399,20 +454,22 @@ header h1{
 }
 
 .promo-middle{
-    height: 70px;
+    height: auto;
     background-color: var(--page-color);
     margin-top: var(--spacingS);
 }
 
 .promo-bottom{
-    height: 70px;
-    justify-content:space-between;
+    /* height: 70px; */
+    height: auto;
+    justify-content:space-evenly;
+    /* margin-top: 5px;
+    margin-bottom: 5px; */
 }
 
 .promo-bottom div:first-child{
     width: 75px;
     height: auto;
-    margin-left: 10px;
 }
 
 .promo-bottom div:first-child p{
@@ -429,16 +486,16 @@ header h1{
     background-color: var(--white);
 }
 
-.promo-bottom div:nth-child(2) p{
-    /* margin-right: 50px;
-    margin-left: 0px; */
-}
+/* .promo-bottom div:nth-child(2) p{
+    margin-right: 50px;
+    margin-left: 0px;
+} */
 
 .promo-bottom .button{
     width: 450px;
     height: 50px;
-    margin-right: 10px;
     background-color:var(--main-color);
+    margin: 10px 0;
 }
 
 .promo-bottom .button p{
@@ -458,7 +515,7 @@ header h1{
 }
 
 .introduction-product-title hr{
-    width: 240px;
+    width: 10%;
     border-top: 2px solid var(--black);
 }
 
@@ -477,14 +534,6 @@ header h1{
 
 .sub-introduction div:first-child{
     margin: 15px 0;
-}
-
-.sub-introduction div:first-child hr{
-    width: 462px;
-    height: 4px;
-    background-color: var(--sub-color3);
-    border-radius: 20px;
-    margin-top: -5px;
 }
 
 .sub-introduction .sub-image{
@@ -536,22 +585,27 @@ header h1{
 
 .coupon-left, .coupon-right{
     margin: 20px 0;
-    width: 276px;
-    height: 102px;
+    height: auto;
     background-color: var(--white);
 }
 
 .coupon-left{
-    width: 276px;
+    width: 35%;
 }
 
 .coupon-right{
-    width: 345px;
-    justify-content: space-between;
+    width: 60%;
+    justify-content: space-evenly;
+}
+
+.coupon-right div{
+    margin: 5px 0;
+    padding: 5px 0 5px 0;
 }
 
 .coupon-right p{
-    padding: 0 20px 0 15px;
+    /* padding: 0 40px 0 15px; */
+    text-align: center;
 }
 
 .coupon-left div{    
@@ -566,7 +620,7 @@ header h1{
     width: 60px;
     height: 60px;
     object-fit: cover;
-    margin: 0 15px;
+    margin: 5px 0;
 }
 
 /* ヘッダー部分直下（3. LINEクーポン）に適用するスタイル ここまで */
@@ -574,15 +628,24 @@ header h1{
 
 /* シリーズ（parfum）簡単な概要紹介に適用するスタイル ここから */
 
-.parfum-series{
-    width: 100%;
+#parfum-series-introduction .parfum-series{
+    /* width: var(--content-width-PC); */
+    width: auto;
     height: auto;
-    margin: auto;
+    margin: -2000px auto 0 auto;
+    
 }
 
 #parfum-series-introduction{
     width: auto;
     height: auto;
+    background-size: cover;
+    background-position: right center;
+}
+
+#parfum-series-introduction #background-and-title{
+    width: auto;
+    height: 2132px;
     margin: 0 calc(50% - 50vw);
     background: url(images/main-images/background-blueandgreen.jpg);
     background-size: cover;
@@ -606,7 +669,7 @@ header h1{
 
 .top{
     justify-content: center;
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
     background-color: var(--main-color);
 }
@@ -618,10 +681,11 @@ header h1{
 
 #parfum-series-introduction .ranking .top{
     height: 50px;
+    text-align: center;
 }
 
 #parfum-series-introduction .ranking-border{
-    width: var(--content-width-PC);
+    /* width: var(--content-width-PC); */
     background-color: var(--white);
     margin: var(--spacingM) auto 0 auto;
     padding: 5px;
@@ -631,36 +695,41 @@ header h1{
 }
 
 #parfum-series-introduction .ranking{
-    width: calc(var(--content-width-PC) - 10px);
+    /* width: calc(var(--content-width-PC) - 10px); */
+    width: 100%;
     background-color: var(--white);
     border: 4px solid var(--main-color);
 }
 
 #parfum-series-introduction .ranking-top{
     margin: 10px 0;
-    width: 100vw;
+    width: 100%;
 }
 
 #parfum-series-introduction .ranking-top p{
-    margin: 10px 20px;
+    margin: 10px 5px;
 }
 
 #parfum-series-introduction .ranking-bottom{
-    width: 50%;
+    /* width: 50%; */
     max-width: 50%;
-    height: 150px;
+    height: auto;
+    padding-bottom: 10px;
     padding-left: 10px;
-    justify-content: flex-start;
+    padding-right: 10px;
+    justify-content: center;
 }
 
 #parfum-series-introduction .ranking-bottom img{
     width: 120px;
+    margin: 10px 0;
     margin-right: 10px;
 }
 
 #parfum-series-introduction .ranking-bottom div{
-    width: 63%;
-    flex-direction: column;
+    /* width: 63%; */
+    /* flex-direction: column; */
+    height: 100%;
 }
 
 .series-introduction-top{
@@ -674,7 +743,8 @@ header h1{
 }
 
 .series-introduction-contents{
-    width: calc(var(--content-width-PC)*0.8);
+    /* width: calc(var(--content-width-PC)*0.8); */
+    width: 80%;
     height: auto;
     margin: auto;
     padding-top: var(--spacingM);
@@ -718,32 +788,49 @@ header h1{
 
 /* セット（shampoo+hair-oil）の説明に適用するスタイル ここから */
 
-#shampoo{
+#shampoo, #hair-oil{
     width: 100%;
     height: auto;
     margin: var(--spacingL) 0;
 }
 
-#shampoo .textbox0 p{
+#shampoo .textbox0 p, #hair-oil .textbox0 p{
     text-align: center;
     height: 104px;
     margin-bottom: -104px;
     position: relative;
 }
 
-#shampoo .quadrate-image img{
-    height: 610px;
-
-    object-fit: cover;
-
+#shampoo .textbox1, #hair-oil .textbox1{
+    height: 106.4px;
+    margin-top: -106.4px;
 }
 
-.recommendation{
-    width: 80%;
+/* #shampoo .textbox1 p:nth-child(4){
+    margin-bottom: var(--spacingS);
+} */
+
+
+
+
+#shampoo .quadrate-image img, #hair-oil .quadrate-image img{
+    height: 610px;
+    object-fit: cover;
+}
+
+#shampoo .recommendation{
+    margin: var(--spacingM) 40px;
+    height: auto;
+    background-color: var(--white);
+}
+
+#shampoo .recommendation .recommendation-text, #shampoo .recommendation-images img{
+    margin: 20px 5px;
 }
 
 #shampoo .recommendation-text{
     width: 60%;
+    height: auto;
 }
 
 #shampoo .recommendation p{
@@ -752,13 +839,19 @@ header h1{
 
 #shampoo .recommendation-list{
     text-align: left;
+    height: auto;
 }
 
 #shampoo .recommendation-list li{
     width: auto;
     height: auto;
+    flex-wrap: nowrap;
     justify-content: flex-start;
+    margin: 5px 0;
+}
 
+#shampoo .recommendation-list div{
+    margin: 7.5px 0;
 }
 
 #shampoo .recommendation-check-box{
@@ -768,7 +861,74 @@ header h1{
 }
 
 #shampoo .recommendation-images{
-    
+    text-align: center;
+}
+
+#shampoo .recommendation-images img{
+    width: 80px;
+    height: 80px;
+    border-radius: 25px;
+}
+
+#shampoo .improvement{
+    width: auto;
+    margin: auto;
+    height: 250px;
+}
+
+#shampoo .improvement{
+    margin: auto;
+}
+
+#shampoo .improvement div{
+    margin-right: -80px;
+}
+
+#shampoo .improvement img{
+    width: 35%;
+    height: 250px;
+    object-fit: cover;
+}
+
+#shampoo .improvement p{
+    position: relative;    
+}
+
+.ingredients-introduction{
+    height: auto;
+    margin-top: var(--spacingM);
+}
+
+.ingredients-introduction .title-circle{
+    text-align: center;
+}
+
+.ingredients-introduction .title-circle p{
+    width: 80px;
+    height: 80px;
+    padding-top: 20px;
+    border-radius: 50px;
+    background-color: var(--main-color);
+}
+
+.ingredients-introduction .each-ingredients{
+    text-align: center;
+    width: auto;
+}
+
+.ingredients-introduction .each-ingredients img{
+    width: 80px ;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50px;
+    margin: 10px 5px;
+}
+
+.ingredients-introduction .ingredients{
+    background-color: var(--white);
+    padding-top: var(--spacingM);
+    padding-bottom: var(--spacingM);
+    margin: -30px var(--spacingM) 0 var(--spacingM);
 }
 
 
@@ -816,14 +976,14 @@ header h1{
         margin: 0;
     }
     
-    #parfum-series-introduction{
+    /* #parfum-series-introduction{
         width: auto;
         height: auto;
         margin: 0;
         background: url(images/main-images/background-blueandgreen.jpg);
         background-size: cover;
         background-position: right center;
-    }
+    } */
 
     #parfum-series-introduction .top{
         width: auto;
@@ -834,18 +994,18 @@ header h1{
         height: 50px;
     }
     
-    #parfum-series-introduction .ranking-border{
+    /* #parfum-series-introduction .ranking-border{
         width: var(--content-width-TABLET);
         background-color: var(--white);
         margin: var(--spacingM) auto 0 auto;
         padding: 5px;
-    }
+    } */
     
-    #parfum-series-introduction .ranking{
+    /* #parfum-series-introduction .ranking{
         width: calc(var(--content-width-TABLET) - 10px);
         background-color: var(--white);
         border: 4px solid var(--main-color);
-    }
+    } */
     
     #parfum-series-introduction .ranking-top{
         margin: 10px 0;
