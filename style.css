@@ -7,9 +7,10 @@
 
 :root {
     /* width */
-    --content-width: 800px;
+    --content-width-PC: 800px;
     --min-content-width: 300px;
     /* ※スマートフォンの最小幅は320px */
+    --content-width-TABLET: 100vw;
     /* color */
     --page-color: #abcdef;
     --main-color: #547557;
@@ -41,10 +42,10 @@
 }
 
 #wrapper{
-    /* width: var(--content-width); */
-    /* min-width: var(--content-width); */
+    /* width: var(--content-width-PC); */
+    /* min-width: var(--content-width-PC); */
     min-width: var(--min-content-width);
-    max-width: var(--content-width);
+    max-width: var(--content-width-PC);
     margin: auto;
 }
 
@@ -334,7 +335,7 @@ header{
 header h1{
     margin-top: 0;
     padding-left: 15px;
-    margin-left: calc(50vw - calc(0.5*var(--content-width)));
+    margin-left: calc(50vw - calc(0.5*var(--content-width-PC)));
     /* 左空白：(ビューポート幅-コンテンツ幅)/2=(100vw-800px)/2 */
 }
 
@@ -580,7 +581,7 @@ header h1{
 }
 
 #parfum-series-introduction{
-    width: 100vw;
+    width: auto;
     height: auto;
     margin: 0 calc(50% - 50vw);
     background: url(images/main-images/background-blueandgreen.jpg);
@@ -596,6 +597,11 @@ header h1{
     background-color: var(--white);
     height: 1px;
     margin: 5px 0 5px 0;
+}
+
+#parfum-series-introduction .introduction-head{
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 
 .top{
@@ -615,14 +621,17 @@ header h1{
 }
 
 #parfum-series-introduction .ranking-border{
-    width: var(--content-width);
+    width: var(--content-width-PC);
     background-color: var(--white);
     margin: var(--spacingM) auto 0 auto;
     padding: 5px;
+    /* width: 100%; */
+    /* border-color: var(--white); */
+    /* border-style: solid; */
 }
 
 #parfum-series-introduction .ranking{
-    width: calc(var(--content-width) - 10px);
+    width: calc(var(--content-width-PC) - 10px);
     background-color: var(--white);
     border: 4px solid var(--main-color);
 }
@@ -665,7 +674,7 @@ header h1{
 }
 
 .series-introduction-contents{
-    width: 80%;
+    width: calc(var(--content-width-PC)*0.8);
     height: auto;
     margin: auto;
     padding-top: var(--spacingM);
@@ -769,18 +778,18 @@ header h1{
 
 
 
-@media screen and (max-width: calc(var(--content-width) - 1px)) {
+@media screen and (max-width: calc(var(--content-width-PC) - 1px)) {
 	/* タブレット・スマホ用CSS：PC版コンテンツ幅 (:799px) 以下に適用される */
     #wrapper{
-        width: 100vw;
-        max-width: 100vw;
+        width: var(--content-width-TABLET);
+        /* max-width: calc(var(--content-width-PC) - 1px); */
         min-width: var(--min-content-width);
         margin: auto;
     }
     
     header{
-        width: 100vw;
-        max-width: 100vh;
+        width: var(--content-width-TABLET);
+        max-width: var(--content-width-TABLET);
         min-width: 150px;
         /* margin:0 calc(50% - 50vw); */
         /* height: 800px; */
@@ -791,7 +800,7 @@ header h1{
         margin-top: 0;
         margin-left: 0;
         padding-left: 15px;
-        /* margin-left: calc(50vw - calc(0.5*var(--content-width))); */
+        /* margin-left: calc(50vw - calc(0.5*var(--content-width-PC))); */
         /* 左空白：(ビューポート幅-コンテンツ幅)/2=(100vw-800px)/2 */
     }
 
@@ -800,5 +809,68 @@ header h1{
         display: flex;
     }
 
+
+    #parfum-series-introduction .parfum-series{
+        width: var(--content-width-TABLET);
+        height: auto;
+        margin: 0;
+    }
+    
+    #parfum-series-introduction{
+        width: auto;
+        height: auto;
+        margin: 0;
+        background: url(images/main-images/background-blueandgreen.jpg);
+        background-size: cover;
+        background-position: right center;
+    }
+
+    #parfum-series-introduction .top{
+        width: auto;
+        height: 70px;
+    }
+    
+    #parfum-series-introduction .ranking .top{
+        height: 50px;
+    }
+    
+    #parfum-series-introduction .ranking-border{
+        width: var(--content-width-TABLET);
+        background-color: var(--white);
+        margin: var(--spacingM) auto 0 auto;
+        padding: 5px;
+    }
+    
+    #parfum-series-introduction .ranking{
+        width: calc(var(--content-width-TABLET) - 10px);
+        background-color: var(--white);
+        border: 4px solid var(--main-color);
+    }
+    
+    #parfum-series-introduction .ranking-top{
+        margin: 10px 0;
+        width: 100vw;
+    }
+    
+    #parfum-series-introduction .ranking-top p{
+        margin: 10px 20px;
+    }
+    
+    #parfum-series-introduction .ranking-bottom{
+        width: 50%;
+        max-width: 50%;
+        height: 150px;
+        padding-left: 10px;
+        justify-content: flex-start;
+    }
+
+    .series-introduction-contents{
+        width: calc(var(--content-width-TABLET)*0.8);
+        height: auto;
+        margin: auto;
+        padding-top: var(--spacingM);
+        padding-bottom: calc(var(--spacingM) + var(--spacingS));
+        text-align: center;
+    }
 
 }
