@@ -361,8 +361,12 @@ h1{
     font-size: var(--text-size-PC-I);
     line-height: 1.5em;
 }
-.ingredients-introduction .title-circle p{
+.contents2-introduction .title-circle p{
     color: var(--white);
+    font-weight: bold;
+}
+.contents2-introduction .contents2 p{
+    line-height: 1.5em;
 }
 /* shampooのみ */
 
@@ -894,16 +898,16 @@ header h1{
     position: relative;    
 }
 
-.ingredients-introduction{
+.contents2-introduction{
     height: auto;
     margin-top: var(--spacingM);
 }
 
-.ingredients-introduction .title-circle{
+.contents2-introduction .title-circle{
     text-align: center;
 }
 
-.ingredients-introduction .title-circle p{
+.contents2-introduction .title-circle p{
     width: 80px;
     height: 80px;
     padding-top: 20px;
@@ -911,12 +915,21 @@ header h1{
     background-color: var(--main-color);
 }
 
-.ingredients-introduction .each-ingredients{
-    text-align: center;
-    width: auto;
+.contents2-introduction .contents2{
+    height: auto;
+    background-color: var(--white);
+    padding-top: var(--spacingM);
+    padding-bottom: var(--spacingM);
+    margin: -30px var(--spacingM) 0 var(--spacingM);
 }
 
-.ingredients-introduction .each-ingredients img{
+.contents2-introduction .each-contents2{
+    text-align: center;
+    width: auto;
+    height: auto;
+}
+
+.contents2-introduction .each-contents2 img{
     width: 80px ;
     height: 80px;
     object-fit: cover;
@@ -924,13 +937,21 @@ header h1{
     margin: 10px 5px;
 }
 
-.ingredients-introduction .ingredients{
-    background-color: var(--white);
-    padding-top: var(--spacingM);
-    padding-bottom: var(--spacingM);
-    margin: -30px var(--spacingM) 0 var(--spacingM);
+#shampoo .contents2-introduction .contents2{
+    justify-content:space-evenly;
 }
 
+#hair-oil .contents2-introduction{
+    
+}
+
+#hair-oil .contents2-introduction .contents2{
+    justify-content:space-evenly;
+}
+
+#hair-oil .contents2-introduction div:first-child{
+    /* margin-bottom: 10px; */
+}
 
 
 /* セット（shampoo+hair-oil）の説明に適用するスタイル ここまで */
