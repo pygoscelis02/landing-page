@@ -959,7 +959,7 @@ header h1{
 
 
 
-@media screen and (max-width: calc(var(--content-width-PC) - 1px)) {
+@media screen and (max-width: 799px) {
 	/* タブレット・スマホ用CSS：PC版コンテンツ幅 (:799px) 以下に適用される */
     #wrapper{
         width: var(--content-width-TABLET);
