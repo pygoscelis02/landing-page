@@ -66,7 +66,7 @@
 body{
     margin: 0;
     font-size: var(--text-size-PC-A);
-    border: 3px solid rgb(255, 255, 255);
+    /* border: 3px solid rgb(255, 255, 255); */
     background-color: var(--page-color);
 }
 
@@ -107,6 +107,10 @@ img{
     vertical-align:top;
     /* ↑これを指定することで margin, padding 0 指定でも消せない空白を消す */
     /* 🎀「img」には必ず指定した方が良い！🎀 */
+}
+
+address{
+    color: var(--black);
 }
 
 /* div{
@@ -328,13 +332,23 @@ h1{
 
 /* 📜セット（shampoo+hair-oil）の説明に適用するスタイル ここから📜 */
 
+.contents2-introduction .title-circle p{
+    color: var(--white);
+    font-weight: bold;
+}
+.contents2-introduction .contents2 p{
+    line-height: 1.5em;
+    text-align: center;
+}
+
+
+/* shampooのみ */
 #shampoo .textbox0 p, #hair-oil .textbox0 p{
     font-size: var(--text-size-PC-L);
     color: var(--white);
     text-shadow: var(--shadow2);
     line-height: 2em;
 }
-
 #shampoo .textbox1 p, #hair-oil .textbox1 p{
     font-size: var(--text-size-PC-C);
     color: var(--white);
@@ -343,14 +357,10 @@ h1{
     text-shadow: var(--shadow2);
     line-height: 1.2em;
 }
-
 #shampoo .recommendation-list div p{
     font-size: var(--text-size-PC-A);
     font-weight: bold;
 }
-
-
-/* shampooのみ */
 #shampoo .improvement p{
     font-size: var(--text-size-PC-G);
     line-height: 1.2em;
@@ -361,18 +371,33 @@ h1{
     font-size: var(--text-size-PC-I);
     line-height: 1.5em;
 }
-.contents2-introduction .title-circle p{
-    color: var(--white);
-    font-weight: bold;
-}
-.contents2-introduction .contents2 p{
-    line-height: 1.5em;
-}
 /* shampooのみ */
 
 
-
 /* 📜セット（shampoo+hair-oil）の説明に適用するスタイル ここまで📜 */
+
+
+/* 📜フォーム部分に適用するスタイル ここから📜 */
+
+.form-top{
+    color: var(--white);
+    line-height: 3em;
+    text-align: center;
+}
+
+/* 📜フォーム部分に適用するスタイル ここまで📜 */
+
+
+
+/* 📜フッター部分に適用するスタイル ここから📜 */
+
+footer .copyright{
+    font-size: small;
+    color: var(--white);
+    line-height: 2em;
+}
+
+/* 📜フッター部分に適用するスタイル ここまで📜 */
 
 
 
@@ -632,29 +657,30 @@ header h1{
 
 /* シリーズ（parfum）簡単な概要紹介に適用するスタイル ここから */
 
-#parfum-series-introduction .parfum-series{
-    /* width: var(--content-width-PC); */
-    width: auto;
-    height: auto;
-    margin: -2000px auto 0 auto;
-    
-}
-
 #parfum-series-introduction{
     width: auto;
     height: auto;
+    margin: 0 calc(50% - 50vw);
+    background: url(images/main-images/background-blueandgreen.jpg);
     background-size: cover;
     background-position: right center;
 }
 
-#parfum-series-introduction #background-and-title{
+#parfum-series-introduction .parfum-series{
+    width: var(--content-width-PC);
+    margin: auto;
+    height: auto;
+    /* margin: -2000px auto 0 auto; */
+}
+
+/* #parfum-series-introduction #background-and-title{
     width: auto;
     height: 2132px;
     margin: 0 calc(50% - 50vw);
     background: url(images/main-images/background-blueandgreen.jpg);
     background-size: cover;
     background-position: right center;
-}
+} */
 
 #parfum-series-introduction .spacing{
     height: var(--spacingM);
@@ -895,13 +921,17 @@ header h1{
 }
 
 #shampoo .improvement p{
-    position: relative;    
+    position: relative;
 }
 
 .contents2-introduction{
     height: auto;
     margin-top: var(--spacingM);
 }
+
+/* .contents2-introduction .hair-oil-set{
+    display: flex;
+} */
 
 .contents2-introduction .title-circle{
     text-align: center;
@@ -942,19 +972,120 @@ header h1{
 }
 
 #hair-oil .contents2-introduction{
-    
+    height: auto;
 }
 
 #hair-oil .contents2-introduction .contents2{
     justify-content:space-evenly;
 }
 
-#hair-oil .contents2-introduction div:first-child{
-    /* margin-bottom: 10px; */
+/* #hair-oil .contents2-introduction .contents2:first-child{
+    margin-bottom: var(--spacingM);
+} */
+
+#hair-oil .contents2-introduction .contents2 div:first-child{
+    width: 100%;
+}
+
+.contents2-introduction .title-circle:nth-child(2) div{
+    margin-top: var(--spacingM);
+}
+
+/* セット（shampoo+hair-oil）の説明に適用するスタイル ここまで */
+
+
+
+/* フォーム部分に適用するスタイル ここから */
+
+form{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    /* background-color: #1c9f94; */
+}
+
+form .form-wrapper{
+    margin: 0 10px;
+}
+
+.form-top{
+    margin-top: var(--spacingL);
+    background-color: var(--main-color);
+    line-height: 3em;
+}
+
+.form-top2{
+    line-height: 1.5em;
+    text-align: center;
+    margin: 10px 0;
 }
 
 
-/* セット（shampoo+hair-oil）の説明に適用するスタイル ここまで */
+
+label, input[type=text], input[type=tel], input[type=email]{
+    display: block;
+}
+
+
+
+.form-bottom{
+    height: var(--spacingL);
+}
+
+/* フォーム部分に適用するスタイル ここまで */
+
+
+
+/* フッター部分に適用するスタイル ここから */
+
+
+footer{
+    background-color:var(--sub-color3);
+}
+
+footer hr{
+    margin: 0;
+    height: auto;
+}
+
+footer .project-name{
+    font-size: var(--text-size-PC-E);
+    text-align: center;
+    font-weight: bold;
+    /* text-shadow: var(--shadow2); */
+    line-height: 1.5em;
+    padding-top: var(--spacingS);
+}
+
+footer hr{
+    height: 3px;
+    background-color: var(--main-color);
+    margin: 10px var(--spacingS);
+}
+
+footer .logo-address{
+    height: auto;
+    margin: 0 10px;
+    flex-wrap: nowrap;
+    padding-bottom: 5px;
+}
+
+footer img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+footer .copyright{
+    width: 100%;
+    height: auto;
+    background-color: var(--main-color);
+    text-align: center;
+}
+
+/* フッター部分に適用するスタイル ここまで */
+
 
 
 
@@ -1013,6 +1144,7 @@ header h1{
     
     #parfum-series-introduction .ranking .top{
         height: 50px;
+        width: 100vw;
     }
     
     /* #parfum-series-introduction .ranking-border{
@@ -1040,7 +1172,7 @@ header h1{
     #parfum-series-introduction .ranking-bottom{
         width: 50%;
         max-width: 50%;
-        height: 150px;
+        /* height: 150px; */
         padding-left: 10px;
         justify-content: flex-start;
     }
