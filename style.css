@@ -12,7 +12,7 @@
     /* ※スマートフォンの最小幅は320px */
     --content-width-TABLET: 100vw;
     /* color */
-    --page-color: #abcdef;
+    --page-color: rgb(237, 240, 237);
     --main-color: #547557;
     --sub-color: #E1EFEF;
     --sub-color2: #1c9f94;
@@ -367,6 +367,7 @@ h1{
     color: var(--sub-color4);
     text-shadow: var(--shadow2);
 }
+
 #shampoo .improvement p:nth-child(3), #shampoo .improvement p:nth-child(3) strong{
     font-size: var(--text-size-PC-I);
     line-height: 1.5em;
@@ -953,6 +954,10 @@ header h1{
     margin: -30px var(--spacingM) 0 var(--spacingM);
 }
 
+.contents2-introduction .introduction-text p{
+    margin-top: var(--spacingM);
+}
+
 .contents2-introduction .each-contents2{
     text-align: center;
     width: auto;
@@ -1020,13 +1025,23 @@ form .form-wrapper{
     margin: 10px 0;
 }
 
-
+input{
+    width: 100%;
+}
 
 label, input[type=text], input[type=tel], input[type=email]{
     display: block;
 }
 
 
+
+.form-note{
+    margin: var(--spacingM) 0;
+}
+
+.form-note p:first-child{
+    margin: var(--spacingM) 0 var(--spacingS) 0;
+}
 
 .form-bottom{
     height: var(--spacingL);
