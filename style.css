@@ -7,7 +7,7 @@
 
 :root {
     /* width */
-    --content-width-PC: 800px;
+    --content-width-PC: 900px;
     --min-content-width: 320px;
     /* ※スマートフォンの最小幅は320px */
     --content-width-TABLET: 100vw;
@@ -30,12 +30,14 @@
     --spacingM: 40px;
     --spacingS: 20px;
     /* text-size for PC */
-    --text-size-PC-A: 16px;
+    --text-size-PC-A: 19px;
+    /* ↑M */
     --text-size-PC-B: 17px;
     --text-size-PC-C: 18px;
     --text-size-PC-D: 20px;
     --text-size-PC-E: 22px;
-    --text-size-PC-F: 24px;
+    --text-size-PC-F: 28px;
+    /* ↑LL */
     --text-size-PC-G: 28px;
     --text-size-PC-H: 30px;
     --text-size-PC-I: 36px;
@@ -52,7 +54,8 @@
 
 *{
     box-sizing: border-box;
-    /* outline: red solid 1px; */
+    font-family: 'Meiryo', 'sans-serif', 'Times New Roman';
+    outline: red solid 1px;
 }
 
 #wrapper{
@@ -64,10 +67,18 @@
 }
 
 body{
-    margin: 0;
     font-size: var(--text-size-PC-A);
+    margin: 0;
     /* border: 3px solid rgb(255, 255, 255); */
     background-color: var(--page-color);
+}
+
+p{
+    font-size: var(--text-size-PC-A);
+    margin: 0;
+    padding: 0;
+    line-height: 100%;
+    color: var(--black);
 }
 
 a{
@@ -76,18 +87,10 @@ a{
     margin: 0;
 }
 
-p{
-    margin: 0;
-    padding: 0;
-    line-height: 100%;
-    font-size: var(--text-size-PC-A);
-    color: var(--black);
-}
-
 strong{
     margin: 0;
     padding: 0;
-    line-height: 100%;
+    line-height: 1em;
     font-size: var(--text-size-PC-A);
 }
 
@@ -107,6 +110,10 @@ img{
     vertical-align:top;
     /* ↑これを指定することで margin, padding 0 指定でも消せない空白を消す */
     /* 🎀「img」には必ず指定した方が良い！🎀 */
+}
+
+hr{
+    margin: 0;
 }
 
 address{
@@ -180,32 +187,31 @@ h1{
 
 .promo-middle p:first-child{
     font-size: var(--text-size-PC-F);
-    font-weight: bold;
+    /* font-weight: bold; */
     color: var(--main-color);
-    line-height: 2em;
+    
 }
 
 .promo-middle p:nth-child(2){
-    line-height: 1.8em;
+    
 }
 
-.promo-bottom div:first-child p:first-child{
+.promo-bottom .send-free-top p{
     color: var(--white);
-    background-color: #fff;
 }
 
-.promo-bottom div:first-child p:nth-child(2){
+.promo-bottom .send-free-bottom p{
     color: var(--sub-color4);
-    background-color: #fff;
 }
 
-.promo-bottom div:nth-child(2) p{
-    font-weight: bold;
+.promo-bottom .send-free p{
+    /* font-weight: bold; */
     font-size: var(--text-size-PC-C);
 }
 
-.promo-bottom div:nth-child(2) p strong{
-    font-size: var(--text-size-PC-K);
+.promo-bottom .total-cost p strong{
+    font-size: 68px;
+    line-height: 1em;
     /* font-weight: bold; */
 }
 
@@ -215,8 +221,7 @@ h1{
 }
 
 .introduction-product-title p{
-    font-size: var(--text-size-PC-D);
-    font-weight: bold;
+    font-size: var(--text-size-PC-F);
 }
 
 .sub-introduction div:first-child p{
@@ -477,7 +482,7 @@ header h1{
 }
 
 .promo-top{
-    height: var(--spacingL);
+    height: 66px;
     justify-content: center;
     margin: auto;
     background-color: hsl(51, 33%, 58%, 0.7);
@@ -486,46 +491,55 @@ header h1{
 .promo-middle{
     height: auto;
     background-color: var(--page-color);
-    margin-top: var(--spacingS);
+}
+
+.promo-middle p:first-child{
+    font-size: var(--text-size-PC-F);
+    color: var(--main-color);
+    margin:var(--spacingM) 0 0 0;
+}
+
+.promo-middle p:nth-child(2){
+    margin: 24px 0;
+    
 }
 
 .promo-bottom{
-    /* height: 70px; */
     height: auto;
     justify-content:space-evenly;
     /* margin-top: 5px;
     margin-bottom: 5px; */
 }
 
-.promo-bottom div:first-child{
-    width: 75px;
-    height: auto;
+.promo-bottom .send-free{
+    width: 100px;
+    height: 70px;
+    align-items: center;
 }
 
-.promo-bottom div:first-child p{
-    width: auto;
-    padding: 4px 0;
+.promo-bottom .send-free p{
     text-align: center;
+    width: auto;
+    /* padding: 4px 0; */
+    /* line-height: 1.7rem; */
 }
 
-.promo-bottom div:first-child p:first-child{
+.promo-bottom .send-free .send-free-top{
     background-color: var(--sub-color4);
+    height: 35px;
 }
 
-.promo-bottom div:first-child p:nth-child(2){
+.promo-bottom .send-free .send-free-bottom{
     background-color: var(--white);
+    height: 35px;
 }
 
-/* .promo-bottom div:nth-child(2) p{
-    margin-right: 50px;
-    margin-left: 0px;
-} */
+
 
 .promo-bottom .button{
     width: 450px;
-    height: 50px;
+    height: 70px;
     background-color:var(--main-color);
-    margin: 10px 0;
 }
 
 .promo-bottom .button p{
@@ -541,12 +555,15 @@ header h1{
 
 
 .introduction-product-title{
-    height: 50px;
+    height: auto;
+    margin: 60px 0 var(--spacingS) 0;
+    justify-content: space-between;
 }
 
 .introduction-product-title hr{
-    width: 10%;
-    border-top: 2px solid var(--black);
+    width: calc(0.5*(var(--content-width-PC) - 345px) - 150px);
+    background-color: var(--black);
+    height: 1px;
 }
 
 .set-contents div {
@@ -555,7 +572,7 @@ header h1{
 }
 
 .set-contents div p:first-child{
-    margin-right: 30px;
+
 }
 
 .sub-introduction{
