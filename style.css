@@ -58,6 +58,12 @@
     outline: red solid 1px;
 }
 
+/* ↓ 右側に生じる余分なスペースを消すために必要な記述 */
+html{
+    width: 100vw;
+}
+/* ❕ ↑ DO NOT REWRITE ↑ ❕ */
+
 #wrapper{
     /* width: var(--content-width-PC); */
     /* min-width: var(--content-width-PC); */
@@ -126,14 +132,53 @@ address{
 } */
 
 
-/* 子要素のpにflexを適用するためのclass */
-.text-flex{
+
+
+/* 🌟子要素にflexを適用するためのclass🌟 */
+/* flex */
+/* 文字・コンテンツは左右上下の中の中央 */
+/* 折り返しあり */
+.flex-center-wrap{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
-/* ↑ DO NOT REWRITE ↑ */
+/* flex */
+/* 文字・コンテンツは左右上下の中の中央 */
+/* 折り返し無し */
+.flex-center{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+/* 通常のflexのみ */
+.flex{
+    display: flex;
+}
+/* flexで「縦方向」に並べる */
+/* 文字・コンテンツは左右上下の中の中央 */
+.flex-column-center{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+/* 🌟中央揃えを適用するためのclass🌟 */
+.center{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+/* flexを解除するためのclass */
+.block{
+    display: block;
+}
+/* ❕ ↑ DO NOT REWRITE ↑ ❕ */
+
+
 
 
 /* 🌎全体に適用するスタイル ここまで🌎 */
@@ -143,29 +188,38 @@ address{
 /* 📜文字のスタイルの指定 ここから📜 */
 
 
-/* 📜文字スタイル-ヘッダー部分-📜 */
-
 h1{
     color: var(--white);
     text-shadow: var(--shadow1);
 }
 
-.catch-1 .circle p{
-    color: var(--black);
-    font-weight: bold;
-    text-shadow:1px 1px 2px var(--white);
-}
-
-.catch-1 .catch-1-text p{
+h2{
+    font-size: var(--text-size-PC-G);
+    margin: 0;
     color: var(--white);
     font-weight: 400;
     text-shadow: var(--shadow2);
 }
 
-.catch-2 p{
-    font-size: var(--text-size-PC-A);
-    color: var(--white);
-    text-shadow: var(--shadow2);
+h3{
+    font-size: var(--text-size-PC-E);
+    font-weight: normal;
+    margin: 0;
+}
+
+
+/* 📜文字スタイル-ヘッダー部分-📜 */
+
+.mv-text-1st-row .circle p{
+    color: var(--black);
+    font-weight: bold;
+    text-shadow:1px 1px 2px var(--white);
+}
+
+.mv-text-2nd-row p{
+    font-size: var(--text-size-PC-E);
+    color: var(--main-color);
+    text-shadow:1px 1px 2px var(--black);
 }
 
 /* 📜文字スタイル-ヘッダー部分-ここまで📜 */
@@ -209,7 +263,7 @@ h1{
     font-size: var(--text-size-PC-C);
 }
 
-.promo-bottom .total-cost p strong{
+.promo-bottom .total-price p strong{
     font-size: 68px;
     line-height: 1em;
     /* font-weight: bold; */
@@ -413,7 +467,7 @@ footer .copyright{
 
 /* ヘッダー部分（キービジュアル部分）に適用するスタイル ここから */
 
-header{
+#main-visual-contents{
     width: 100vw;
     /* max-width: 1800px;
     min-width: 150px; */
@@ -429,57 +483,32 @@ header h1{
     /* 左空白：(ビューポート幅-コンテンツ幅)/2=(100vw-800px)/2 */
 }
 
-#main-visual{
+#main-visual-contents{
     height: 800px;
-    /* max-width: 1230px; */
-    margin: auto;
     background: linear-gradient(to bottom, transparent 0%, transparent 65%, var(--page-color) 91%, var(--page-color) 100%), url(images/main-images/main-visual.jpg);
     background-repeat: repeat;
     background-size: cover;
     background-position: bottom;
 }
 
-.catch-1{
-    display: flex;
-    justify-content: center;
-    margin: auto;
-}
-
-.catch-1 .circle{
+.mv-text-1st-row .circle{
     width: 75px;
     height: 75px;
-    background-color: #fff;
+    background-color: var(--white);
     border-radius: 50%;
-    padding: 5px 0px;
+    margin-right: var(--spacingS);
 }
 
-.catch-1 .circle p{
-    text-align: center;
-    width: 75px;
-}
-
-.catch-1-text{
-    flex-flow: column;
-}
-
-.catch-1-text p{
-    margin-left: 20px;
-    font-size: var(--text-size-PC-G);
-}
-
-.catch-2{
-    height: 45px;
-    width: 300px;
+.mv-text-2nd-row{
+    background: linear-gradient(to right, transparent 0%, transparent 25%, var(--white) 35%, var(--white) 50%, var(--white) 65%, transparent 75%, transparent 100%);
     font-size: var(--text-size-PC-B);
-    margin: 5px auto;   
+    margin-top: 10px;
+    padding-top: 5px;
 }
 
 
 /* ヘッダー部分直下（1.プロモーション部分）に適用するスタイル ここから */
 
-#contents{
-    margin-top: calc(-1*(var(--spacingL) + var(--spacingS)));
-}
 
 .promo-top{
     height: 66px;
@@ -1148,7 +1177,7 @@ footer .copyright{
         /* 左空白：(ビューポート幅-コンテンツ幅)/2=(100vw-800px)/2 */
     }
 
-    .catch-1{
+    .mv-text-1st-row{
         width: auto;
         display: flex;
     }
