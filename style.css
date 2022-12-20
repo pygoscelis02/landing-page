@@ -14,6 +14,8 @@
     /* color */
     --page-color: rgb(237, 240, 237);
     --main-color: #547557;
+    --main-color-lighter: #6d8b64;
+    --main-color-hover: #75a67b;
     --sub-color: #E1EFEF;
     --sub-color2: #1c9f94;
     --sub-color3: hsl(51, 33%, 58%);
@@ -30,20 +32,16 @@
     --spacingM: 40px;
     --spacingS: 20px;
     /* text-size for PC */
-    --text-size-PC-A: 19px;
-    /* ↑M */
-    --text-size-PC-B: 17px;
-    --text-size-PC-C: 18px;
-    --text-size-PC-D: 20px;
-    --text-size-PC-E: 22px;
-    --text-size-PC-F: 28px;
-    /* ↑LL */
-    --text-size-PC-G: 28px;
-    --text-size-PC-H: 30px;
-    --text-size-PC-I: 36px;
-    --text-size-PC-J: 45px;
-    --text-size-PC-K: 48px;
-    --text-size-PC-L: 52px;
+    /* 1rem */
+    --text-size-PC-M: 19px;
+    /* 0.72rem */
+    --text-size-PC-SS: calc(var(--text-size-PC-M)*(0.72));
+    /* 0.92rem */
+    --text-size-PC-S: calc(var(--text-size-PC-M)*(0.921));
+    /* 1.13rem */
+    --text-size-PC-L: calc(var(--text-size-PC-M)*(1.132));
+    /* 1.47rem */
+    --text-size-PC-LL: calc(var(--text-size-PC-M)*(1.474));
     /* text-size for TABLET */
 }
 
@@ -73,14 +71,13 @@ html{
 }
 
 body{
-    font-size: var(--text-size-PC-A);
+    font-size: var(--text-size-PC-M);
     margin: 0;
     /* border: 3px solid rgb(255, 255, 255); */
     background-color: var(--page-color);
 }
 
 p{
-    font-size: var(--text-size-PC-A);
     margin: 0;
     padding: 0;
     line-height: 100%;
@@ -88,16 +85,23 @@ p{
 }
 
 a{
+    font-size: var(--text-size-PC-M);
     text-decoration: none;
     padding: 0;
     margin: 0;
 }
 
 strong{
+    font-size: var(--text-size-PC-M);
     margin: 0;
     padding: 0;
     line-height: 1em;
-    font-size: var(--text-size-PC-A);
+}
+
+small{
+    font-size: var(--text-size-PC-M);
+    margin: 0;
+    padding: 0;
 }
 
 li {
@@ -187,14 +191,16 @@ address{
 
 /* 📜文字のスタイルの指定 ここから📜 */
 
-
 h1{
-    color: var(--white);
-    text-shadow: var(--shadow1);
+    font-size: 3.2rem;
+    font-weight: lighter;
+    text-shadow: var(--shadow2);
+    text-decoration: underline solid 2px;
+    text-underline-offset: 0.15em;
 }
 
 h2{
-    font-size: var(--text-size-PC-G);
+    font-size: 2rem;
     margin: 0;
     color: var(--white);
     font-weight: 400;
@@ -202,54 +208,98 @@ h2{
 }
 
 h3{
-    font-size: var(--text-size-PC-E);
+    font-size: var(--text-size-PC-L);
     font-weight: normal;
     margin: 0;
 }
 
-
-/* 📜文字スタイル-ヘッダー部分-📜 */
-
-.mv-text-1st-row .circle p{
-    color: var(--black);
-    font-weight: bold;
-    text-shadow:1px 1px 2px var(--white);
+/* ↓文字を長体テキストにするためのclass🌟 */
+.product-name{
+    /* ↓文字を長体テキストにする */
+    transform: scale(0.35, 1);
+    /* ↓左上を基点に文字を縮小 */
+    transform-origin: top left;
+    /* 文字と文字の間の間隔 */
+    letter-spacing: 0.3em;
 }
 
-.mv-text-2nd-row p{
-    font-size: var(--text-size-PC-E);
+
+/* 📜文字スタイル-ページ最上部お知らせ部分-ここから📜 */
+
+#page-top-announcement p, #page-top-announcement small{
+    font-weight: bold;
+}
+
+#page-top-announcement .text{
+    letter-spacing: 0.15em;
+}
+
+#page-top-announcement .left div small{
     color: var(--main-color);
-    text-shadow:1px 1px 2px var(--black);
+    font-size: 0.5rem;
+    /* margin-bottom: 0.5em; */
+}
+
+#page-top-announcement .left div p{
+    color: var(--main-color);
+    font-size: var(--text-size-PC-L);
+    letter-spacing: 0.25em;
+}
+
+/* 📜文字スタイル-ページ最上部お知らせ部分-ここまで📜 */
+
+
+/* 📜文字スタイル-ヘッダー部分-ここから📜 */
+
+header h1{
+    font-size: 3rem;
+    color: var(--white);
 }
 
 /* 📜文字スタイル-ヘッダー部分-ここまで📜 */
 
 
+/* 📜文字スタイル-promotion部分-📜 */
+
+.mv-text-1st-row .circle p{
+    font-size: var(--text-size-PC-L);
+    color: var(--black);
+    font-weight: bold;
+    text-shadow:1px 1px 2px var(--white);
+    text-align: center;
+}
+
+.mv-text-2nd-row p{
+    font-size: var(--text-size-PC-L);
+    color: var(--main-color);
+    text-shadow:1px 1px 2px var(--black);
+}
+
+/* 📜文字スタイル-promotion部分-ここまで📜 */
+
+
 /* 📜文字スタイル-商品紹介ヘッダー直下部分-ここから📜 */
 
 .promo-top p, .promo-top p strong{
-    font-size: var(--text-size-PC-F);
+    font-size: var(--text-size-PC-LL);
     color: var(--white);
 }
 
 .promo-top p strong{
-    font-size: var(--text-size-PC-I);
+    font-size: 1.89rem;
     color: var(--white);
     padding: 0 10px;
 }
 
+.promo-middle{
+    text-align: center;
+}
 
 .promo-middle p:first-child{
-    font-size: var(--text-size-PC-F);
-    /* font-weight: bold; */
+    font-size: var(--text-size-PC-LL);
     color: var(--main-color);
     
 }
-
-.promo-middle p:nth-child(2){
-    
-}
-
 .promo-bottom .send-free-top p{
     color: var(--white);
 }
@@ -260,7 +310,7 @@ h3{
 
 .promo-bottom .send-free p{
     /* font-weight: bold; */
-    font-size: var(--text-size-PC-C);
+    font-size: var(--text-size-PC-S);
 }
 
 .promo-bottom .total-price p strong{
@@ -270,29 +320,28 @@ h3{
 }
 
 .promo-bottom .button p{
-    font-size: var(--text-size-PC-E);
+    font-size: var(--text-size-PC-L);
     color: var(--white);
 }
 
-.introduction-product-title p{
-    font-size: var(--text-size-PC-F);
+.items-title p{
+    font-size: var(--text-size-PC-LL);
 }
 
-.sub-introduction div:first-child p{
-    font-size: var(--text-size-PC-B);
+.limited-edition div:first-child p{
+    font-size: var(--text-size-PC-L);
     font-weight: 600;
-    text-decoration: underline;
-    text-decoration-color: var(--sub-color4);
-    text-decoration-thickness: 3px;
-
+    text-decoration: underline solid var(--sub-color3) 18px;
+    text-decoration-skip-ink: none;
+    text-underline-offset: -0.15em;
 }
 
 .sub-image p{
-    font-size: var(--text-size-PC-C);
+    font-size: var(--text-size-PC-S);
 }
 
 .sub-image p:nth-child(2), .sub-image p:nth-child(3){
-    font-size: var(--text-size-PC-F);
+    font-size: var(--text-size-PC-LL);
     font-weight: bold;
 }
 
@@ -301,14 +350,14 @@ h3{
 }
 
 .coupon-left-bottom div:first-child p{
-    font-size: var(--text-size-PC-J);
+    font-size: 2.37rem;
     font-weight: bold;
     color: var(--line-green);
     text-align: center;
 }
 
 .coupon-left-bottom div:nth-child(2) p{
-    font-size: var(--text-size-PC-D);
+    font-size: var(--text-size-PC-L);
     color: var(--line-green);
 }
 
@@ -326,17 +375,17 @@ h3{
 }
 
 #parfum-series-introduction .top p:first-child{
-    font-size: var(--text-size-PC-E);
+    font-size: var(--text-size-PC-L);
     font-weight: bold;
     line-height: 1.3em;
 }
 
 #parfum-series-introduction .ranking-top p{
-    font-size: var(--text-size-PC-G);
+    font-size: var(--text-size-PC-LL);
 }
 
 #parfum-series-introduction .ranking-top div p{
-    font-size: var(--text-size-PC-A);
+    font-size: var(--text-size-PC-);
 }
 
 #parfum-series-introduction .ranking-bottom p{
@@ -344,39 +393,39 @@ h3{
 }
 
 .series-introduction-top p{
-    font-size: var(--text-size-PC-D);
+    font-size: var(--text-size-PC-L);
     color: var(--white);
     
     line-height: 2.4em;
 }
 
 .series-introduction-top p:first-child{
-    font-size: var(--text-size-PC-F);
+    font-size: var(--text-size-PC-LL);
     font-weight: bold;
 }
 
 .series-introduction-eachcontent .textbox0 p{
-    font-size: var(--text-size-PC-E);
+    font-size: var(--text-size-PC-L);
     color: var(--white);
     line-height: 2em;
     font-weight: bold;
 }
 
 .series-introduction-eachcontent .textbox0 p strong{
-    font-size: var(--text-size-PC-H);
+    font-size: 1.58rem;
     color: var(--white);
     line-height: 2em;
 }
 
 .series-introduction-eachcontent .textbox1 p{
-    font-size: var(--text-size-PC-D);
+    font-size: var(--text-size-PC-L);
     color: var(--main-color);
     line-height: 1.5em;
     font-weight: bold;
 }
 
 .series-introduction-eachcontent .textbox2 p{
-    font-size: var(--text-size-PC-B);
+    font-size: var(--text-size-PC-S);
     color: var(--black);
     line-height: 1.4em;
     font-weight: bold;
@@ -403,13 +452,13 @@ h3{
 
 /* shampooのみ */
 #shampoo .textbox0 p, #hair-oil .textbox0 p{
-    font-size: var(--text-size-PC-L);
+    font-size: 52px;
     color: var(--white);
     text-shadow: var(--shadow2);
     line-height: 2em;
 }
 #shampoo .textbox1 p, #hair-oil .textbox1 p{
-    font-size: var(--text-size-PC-C);
+    font-size: var(--text-size-PC-S);
     color: var(--white);
     text-align: center;
     font-weight: bold;
@@ -417,18 +466,18 @@ h3{
     line-height: 1.2em;
 }
 #shampoo .recommendation-list div p{
-    font-size: var(--text-size-PC-A);
+    font-size: var(--text-size-PC-M);
     font-weight: bold;
 }
 #shampoo .improvement p{
-    font-size: var(--text-size-PC-G);
+    font-size: var(--text-size-PC-LL);
     line-height: 1.2em;
     color: var(--sub-color4);
     text-shadow: var(--shadow2);
 }
 
 #shampoo .improvement p:nth-child(3), #shampoo .improvement p:nth-child(3) strong{
-    font-size: var(--text-size-PC-I);
+    font-size: 1.89rem;
     line-height: 1.5em;
 }
 /* shampooのみ */
@@ -476,8 +525,86 @@ footer .copyright{
     /* background-color: #aaa; */
 }
 
+#page-top-announcement{
+    height: 54px;
+    width: 100vw;
+    margin: 0 calc(50% - 50vw);
+    border: 3px solid var(--main-color);
+    box-shadow: 0px 2.5px 7.5px 7.5px var(--white);
+    position: relative;
+}
+
+#page-top-announcement .text{
+    margin: 0 20px;
+}
+
+#page-top-announcement .left{
+    width: 50%;
+    height: 100%;
+    background-color: var(--main-color);
+    justify-content: flex-end;
+}
+
+#page-top-announcement .left div{
+    width: 66px;
+    height: 42px;
+    background-color: var(--white);
+    /* padding: 1.5px 6px; */
+}
+
+#page-top-announcement .left p{
+    color: var(--white);
+    font-size: var(--text-size-PC-SS);
+}
+
+#page-top-announcement .left::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    border-top: 0px solid transparent;
+    border-right: 0px solid transparent;
+    border-left: 64px solid var(--main-color);
+    border-bottom: 64px solid transparent;
+}
+
+/* #page-top-announcement .right::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    border-bottom: 0px solid transparent;
+    border-left: 0px solid transparent;
+    border-right: 60px solid var(--white);
+    border-top: 60px solid transparent;
+} */
+
+#page-top-announcement .right{
+    width: 50%;
+    height: 100%;
+    background-color: var(--white);
+    justify-content: flex-start;
+}
+
+#page-top-announcement .right p{
+    color: var(--main-color);
+    font-size: var(--text-size-PC-SS);
+}
+
+#page-top-announcement .right img{
+    height: 70%;
+    width: auto;
+    transform-origin: center;
+    transform: rotate(10deg);
+    margin-left: -30px;
+}
+
+
+
 header h1{
     margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 20px;
     padding-left: 15px;
     margin-left: calc(50vw - calc(0.5*var(--content-width-PC)));
     /* 左空白：(ビューポート幅-コンテンツ幅)/2=(100vw-800px)/2 */
@@ -492,16 +619,31 @@ header h1{
 }
 
 .mv-text-1st-row .circle{
-    width: 75px;
-    height: 75px;
+    width: 108px;
+    height: 108px;
     background-color: var(--white);
     border-radius: 50%;
     margin-right: var(--spacingS);
 }
 
+.mv-text-1st-row .circle p{
+    width: auto;
+    margin: 0.15em;
+}
+
+.mv-text-1st-row .circle img{
+    width: 60px;
+    height: auto;
+    position: absolute;
+    margin-top: 70px;
+    margin-left: 70px;
+    transform-origin: center;
+    transform: rotate(10deg);
+}
+
 .mv-text-2nd-row{
     background: linear-gradient(to right, transparent 0%, transparent 25%, var(--white) 35%, var(--white) 50%, var(--white) 65%, transparent 75%, transparent 100%);
-    font-size: var(--text-size-PC-B);
+    font-size: var(--text-size-PC-S);
     margin-top: 10px;
     padding-top: 5px;
 }
@@ -523,14 +665,13 @@ header h1{
 }
 
 .promo-middle p:first-child{
-    font-size: var(--text-size-PC-F);
+    font-size: var(--text-size-PC-LL);
     color: var(--main-color);
     margin:var(--spacingM) 0 0 0;
 }
 
 .promo-middle p:nth-child(2){
     margin: 24px 0;
-    
 }
 
 .promo-bottom{
@@ -566,13 +707,30 @@ header h1{
 
 
 .promo-bottom .button{
-    width: 450px;
-    height: 70px;
-    background-color:var(--main-color);
+    width: 399px;
+    height: 68px;
+    border: 1.8px solid var(--white);
+    background: linear-gradient(var(--main-color-hover) 0%, var(--main-color) 100%);
+    /* background-color:var(--main-color); */
+    border-radius: 5px;
+    box-shadow: 0 2px 2px var(--black);
 }
 
 .promo-bottom .button p{
     margin: auto;
+}
+
+.promo-bottom .button:hover{
+    background: var(--main-color-hover);
+}
+
+.promo-bottom .button:active{
+    transform: translateY(1px);/*沈むように*/
+    box-shadow: 0 0 1px var(--black);
+}
+
+.promo-bottom .button:active p{
+    color: var(--black);
 }
 
 
@@ -583,44 +741,51 @@ header h1{
 /* ヘッダー部分直下（2. セット内容説明部分）に適用するスタイル ここから */
 
 
-.introduction-product-title{
+.items-title{
     height: auto;
-    margin: 60px 0 var(--spacingS) 0;
+    margin: 66px 0 27px 0;
     justify-content: space-between;
 }
 
-.introduction-product-title hr{
+.items-title hr{
     width: calc(0.5*(var(--content-width-PC) - 345px) - 150px);
     background-color: var(--black);
     height: 1px;
 }
 
-.set-contents div {
+/* ↓レスポンシブ：モバイルで変更 */
+/* width項目：100%に */
+.items div {
     width: 50%;
     justify-content: flex-start;
 }
 
-.set-contents div p:first-child{
+.items div .number{
+    color: var(--main-color);
+}
+
+.items div p:first-child{
 
 }
 
-.sub-introduction{
+.limited-edition{
     justify-content: center;
 }
 
-.sub-introduction div:first-child{
+.limited-edition div:first-child{
     margin: 15px 0;
 }
 
-.sub-introduction .sub-image{
-    height: 180px;
+.limited-edition .sub-image{
+    height: 165px;
     width: 50%;
     background: linear-gradient(to left, transparent 0%, var(--page-color) 57%, var(--page-color) 100%), url(images/main-images/olive-oil.jpg);
     background-size: contain;
     background-position: right center;
+    margin: 15px 0;
 }
 
-.sub-introduction .sub-image p{
+.limited-edition .sub-image p{
     width: 100%;
 }
 
@@ -1110,7 +1275,7 @@ footer hr{
 }
 
 footer .project-name{
-    font-size: var(--text-size-PC-E);
+    font-size: var(--text-size-PC-L);
     text-align: center;
     font-weight: bold;
     /* text-shadow: var(--shadow2); */
