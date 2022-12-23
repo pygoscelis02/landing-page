@@ -246,6 +246,16 @@ h3{
     letter-spacing: 0.25em;
 }
 
+#page-top-announcement .left p{
+    color: var(--white);
+    font-size: var(--text-size-PC-SS);
+}
+
+#page-top-announcement .left p sup{
+    font-size: 0.5rem;
+}
+
+
 /* 📜文字スタイル-ページ最上部お知らせ部分-ここまで📜 */
 
 
@@ -253,6 +263,7 @@ h3{
 
 header h1{
     font-size: 3rem;
+    width: 500px;
     color: var(--white);
 }
 
@@ -345,8 +356,12 @@ header h1{
     font-weight: bold;
 }
 
-.coupon .coupon-friend p{
+#coupon .coupon-friend p{
     color: var(--white);
+}
+
+.coupon-right p, .coupon-left p{
+    font-size: var(--text-size-PC-S);
 }
 
 .coupon-left-bottom div:first-child p{
@@ -356,7 +371,7 @@ header h1{
     text-align: center;
 }
 
-.coupon-left-bottom div:nth-child(2) p{
+.-left-bottom div:nth-child(2) p{
     font-size: var(--text-size-PC-L);
     color: var(--line-green);
 }
@@ -514,28 +529,15 @@ footer .copyright{
 
 
 
-/* ヘッダー部分（キービジュアル部分）に適用するスタイル ここから */
-
-#main-visual-contents{
-    width: 100vw;
-    /* max-width: 1800px;
-    min-width: 150px; */
-    margin:0 calc(50% - 50vw);
-    /* height: 800px; */
-    /* background-color: #aaa; */
-}
+/* ページ上部バナーに適用するスタイル ここから */
 
 #page-top-announcement{
-    height: 54px;
+    height: 57px;
     width: 100vw;
     margin: 0 calc(50% - 50vw);
     border: 3px solid var(--main-color);
     box-shadow: 0px 2.5px 7.5px 7.5px var(--white);
     position: relative;
-}
-
-#page-top-announcement .text{
-    margin: 0 20px;
 }
 
 #page-top-announcement .left{
@@ -550,14 +552,25 @@ footer .copyright{
     height: 42px;
     background-color: var(--white);
     /* padding: 1.5px 6px; */
+    margin-right: 20px;
 }
 
-#page-top-announcement .left p{
-    color: var(--white);
-    font-size: var(--text-size-PC-SS);
+#page-top-announcement .left div p{
+    width: 66px;
 }
 
-#page-top-announcement .left::after {
+#page-top-announcement .right::before {
+    content: '';
+    border-top: 0px solid transparent;
+    border-right: 0px solid transparent;
+    border-left: 60px solid var(--main-color);
+    border-bottom: 57px solid transparent;
+    margin-right: -20px;
+    /* position: absolute; */
+    /* z-index: 0; */
+}
+
+/* #page-top-announcement .left::after {
     content: '';
     position: absolute;
     left: 50%;
@@ -566,7 +579,7 @@ footer .copyright{
     border-right: 0px solid transparent;
     border-left: 64px solid var(--main-color);
     border-bottom: 64px solid transparent;
-}
+} */
 
 /* #page-top-announcement .right::before{
     content: '';
@@ -599,7 +612,11 @@ footer .copyright{
     margin-left: -30px;
 }
 
+/* ページ上部バナーに適用するスタイル ここまで */
 
+
+
+/* キービジュアル部分に適用するスタイル ここから */
 
 header h1{
     margin-top: 0;
@@ -611,11 +628,13 @@ header h1{
 }
 
 #main-visual-contents{
-    height: 800px;
+    width: 100vw;
+    height: 836px;
     background: linear-gradient(to bottom, transparent 0%, transparent 65%, var(--page-color) 91%, var(--page-color) 100%), url(images/main-images/main-visual.jpg);
     background-repeat: repeat;
     background-size: cover;
     background-position: bottom;
+    margin:0 calc(50% - 50vw);
 }
 
 .mv-text-1st-row .circle{
@@ -627,7 +646,7 @@ header h1{
 }
 
 .mv-text-1st-row .circle p{
-    width: auto;
+    width: 108px;
     margin: 0.15em;
 }
 
@@ -648,15 +667,21 @@ header h1{
     padding-top: 5px;
 }
 
+/* キービジュアル部分に適用するスタイル ここまで */
 
-/* ヘッダー部分直下（1.プロモーション部分）に適用するスタイル ここから */
 
+/* キービジュアル部分直下（1.プロモーション部分）に適用するスタイル ここから */
+
+#promotion{
+    margin-top: -129px;
+    /* height: 274px; */
+}
 
 .promo-top{
-    height: 66px;
+    height: 69px;
     justify-content: center;
     margin: auto;
-    background-color: hsl(51, 33%, 58%, 0.7);
+    background-color: hsl(51, 33%, 58%, 0.6);
 }
 
 .promo-middle{
@@ -704,7 +729,9 @@ header h1{
     height: 35px;
 }
 
-
+.promo-bottom strong{
+    
+}
 
 .promo-bottom .button{
     width: 399px;
@@ -734,11 +761,11 @@ header h1{
 }
 
 
-/* ヘッダー部分直下（1.プロモーション部分）に適用するスタイル ここまで */
+/* キービジュアル部分直下（1.プロモーション部分）に適用するスタイル ここまで */
 
 
 
-/* ヘッダー部分直下（2. セット内容説明部分）に適用するスタイル ここから */
+/* キービジュアル部分直下（2. セット内容説明部分）に適用するスタイル ここから */
 
 
 .items-title{
@@ -789,24 +816,24 @@ header h1{
     width: 100%;
 }
 
-/* ヘッダー部分直下（2. セット内容説明部分）に適用するスタイル ここまで */
+/* キービジュアル部分直下（2. セット内容説明部分）に適用するスタイル ここまで */
 
 
-/* ヘッダー部分直下（3. LINEクーポン）に適用するスタイル ここから */
+/* キービジュアル部分直下（3. LINEクーポン）に適用するスタイル ここから */
 
-.coupon{
+#coupon{
     width: auto;
-    height: auto;
+    height: 216px;
     margin: var(--spacingM) 10px var(--spacingL) 10px;
     justify-content: space-evenly;
     background-color:var(--right-gray);    
 }
 
 /* 吹き出し▲部分 */
-.coupon{
+#coupon{
     position: relative;
 }
-.coupon:before {
+#coupon:before {
     content: "";
     position: absolute;
     top: -30px;
@@ -817,17 +844,36 @@ header h1{
   }
 /* 吹き出し▲部分ここまで */
 
-.coupon .coupon-friend{
+#coupon .coupon-friend{
     width: 100%;
-    height: 25px;
+    height: 36px;
     text-align: center;
     background-color: var(--line-green);
 }
 
+#coupon .coupon-contents{
+    margin: auto;
+    height: 180px;
+    justify-content: space-evenly;
+}
+
 .coupon-left, .coupon-right{
-    margin: 20px 0;
     height: auto;
     background-color: var(--white);
+}
+
+/* .coupon-right .add{
+    width: 225px;
+} */
+
+.coupon-right .add{
+    margin: auto;
+    justify-content:space-around;
+    margin: 0 20px;
+}
+
+.coupon-right .add p:first-child{
+    margin-right: 10px;
 }
 
 .coupon-left{
@@ -839,10 +885,10 @@ header h1{
     justify-content: space-evenly;
 }
 
-.coupon-right div{
+/* .coupon-right div{
     margin: 5px 0;
     padding: 5px 0 5px 0;
-}
+} */
 
 .coupon-right p{
     /* padding: 0 40px 0 15px; */
@@ -857,14 +903,14 @@ header h1{
     padding-left: 10px;
 }
 
-.coupon img{
-    width: 60px;
-    height: 60px;
+#coupon img{
+    width: 53px;
+    height: 53px;
     object-fit: cover;
-    margin: 5px 0;
+    margin:11px 0;
 }
 
-/* ヘッダー部分直下（3. LINEクーポン）に適用するスタイル ここまで */
+/* キービジュアル部分直下（3. LINEクーポン）に適用するスタイル ここまで */
 
 
 /* シリーズ（parfum）簡単な概要紹介に適用するスタイル ここから */
@@ -1316,10 +1362,10 @@ footer .copyright{
 
 
 
-@media screen and (max-width: 799px) {
+@media screen and (max-width: 899px) {
 	/* タブレット・スマホ用CSS：PC版コンテンツ幅 (:799px) 以下に適用される */
     #wrapper{
-        width: var(--content-width-TABLET);
+        width: calc(var(--content-width-TABLET) - 60px);
         /* max-width: calc(var(--content-width-PC) - 1px); */
         min-width: var(--min-content-width);
         margin: auto;
@@ -1352,6 +1398,14 @@ footer .copyright{
         width: var(--content-width-TABLET);
         height: auto;
         margin: 0;
+    }
+
+    /* ↓レスポンシブ：モバイルで変更 */
+    /* width項目：100%に */
+    .items div {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 20px;
     }
     
     /* #parfum-series-introduction{
