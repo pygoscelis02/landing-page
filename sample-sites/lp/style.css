@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid #000; */
+}
+
+:root {
+    --main-color: #0F8579;
+    --sub-color: #E1EFEF;
+    --sub-color2-: #27B8AB;
+    --black-: #666;
+    --white-: #fff;
+    --qa-background-color: #EFEFEF;
+
+}
+
+html {
+    font-size: 16px;
+}
+
+#wrapper {
+    margin: auto;
+    width: 900px;
+}
+
+header {
+    width: 100vw;
+    margin: 0 calc(50% - 50vw);
+    height: 830px;
+    background-color: #aaa;
+}
+
+#head-announce {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white-);
+}
+
+#hero-image {
+    background: linear-gradient(to bottom, transparent 0%, transparent 75%, var(--white-) 100%), url(./images/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    height: 830px;
+}
+
+#hero-content {
+    width: 900px;
+    margin: auto;
+}
+
+#hero-content h1 {
+    padding-top: 30px;
+}
+#hero-content h1 img {
+    height:150px;
+    width: auto;
+}
+
+
+#rakuten-promo {
+    margin-top: -100px;
+    width: 100%;
+    height: 300px;
+}
+
+.promo-title {
+    height: 70px;
+    background-color: #9B9928;
+    opacity: 0.8;
+}
+
+.promo-title p {
+    padding-top: 3px;
+    font-size: 1.25rem;
+    color: var(--white-);
+    text-align: center;
+}
+
+.promo-title p strong {
+    font-size: 2.5rem;
+}
+
+.promo-content {
+    background-color: var(--white-);
+    color: var(--black-);
+    text-align: center;
+    padding: 15px;
+}
+
+.promo-content p {
+    margin: 15px 0;
+}
+
+.promo-content > p:first-child {
+    color: var(--main-color);
+    font-size: 2rem;
+}
+
+.promo-content p strong {
+    font-size: 3.5rem;
+}
+
+.promo-buybtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.promo-buybtn p {
+    margin: 0;    
+}
+
+.promo-content .button a {
+    height: 70px;
+    width: 400px;
+    padding-right: 25px;
+    padding-left: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    background-color: var(--main-color);
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 1.5rem;
+}
+
+.promo-content .button a::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-bottom: 1px solid var(--white-);
+    border-right: 1px solid var(--white-);
+    transform: rotate(45deg);
+}
+
+.promo-content .button a:hover {
+    text-decoration: none;
+    background-color: var(--sub-color2-);
+}
+
+.promo-content .button a:link {
+    color: var(--white-);
+}
+
+h2.catch {
+    margin: 25px 0;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+   justify-content: space-between;
+  }
+  .catch:before, .catch:after {
+    border-top: 1px solid;
+    content: "";
+    width: 150px;
+  }
+  .catch:before {
+    margin-right: 1em;
+  }
+  .catch:after {
+    margin-left: 1em;
+  }
+  ol#catch-web-item{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 48px;
+    counter-reset:number;
+    list-style-type: none!important; 
+  }
+  #catch-web-item li{
+    width: 43%;
+    position: relative;
+    padding-left: 20px;
+
+  }
+  ol li:before{
+    position: absolute;
+    counter-increment: number;
+    content: counter(number);
+    display:inline-block;
+    background: var(--sub-color2-);
+    color: white;
+    font-size: 0.5rem;
+    border-radius: 50%;
+    left: 0;
+    width: 15px;
+    height:15px;
+    line-height: 15px;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+  }
